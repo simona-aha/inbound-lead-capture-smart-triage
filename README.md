@@ -1,6 +1,34 @@
 # Inbound Lead Capture & Smart Triage
 
-**Marketing Intelligence** · A deliberately small workflow that turns free-text inbound enquiries into validated, advisory triage recommendations for human review.
+**Marketing Intelligence** · A specific inbound lead-triage application that organises submitted information and turns a prospect's free-text message into a validated, advisory recommendation for human review.
+
+## Business Application
+
+Marketing and revenue teams may need to qualify and process inbound requests when the available information is incomplete, inconsistent, or difficult to interpret. In a lightweight form-based intake process, manual first review can also vary from one request to another.
+
+Scenario 01 demonstrates one implementation pattern for that problem. It accepts an inbound submission, interprets the free-text Message, validates the proposed triage outcome, and creates a structured review item. The final decision and any Marketing-to-Sales action remain with a human reviewer.
+
+This case study does not define the full Marketing Intelligence domain. Broader Marketing Intelligence solutions may use deterministic, AI-assisted, or hybrid decision logic depending on the business problem, predefined rules, uncertainty, consequence, and required human oversight. Scenario 01 specifically uses **AI interprets → Rules validate → Human decides**.
+
+## Who It Helps
+
+- Marketing Ops
+- Demand Generation
+- Growth
+- RevOps
+- Sales Ops
+
+## Potential Operational Value
+
+This implementation pattern may support:
+
+- more consistent initial lead triage;
+- less manual interpretation of inbound messages;
+- a more structured basis for Marketing-to-Sales handoff decisions;
+- better use of the information available in inbound submissions; and
+- a smoother, faster initial review process.
+
+These are expected operational benefits, not measured outcomes. The portfolio validation does not establish time savings, conversion impact, customer experience improvement, ROI, or production performance.
 
 | Status | Platforms | Validation data |
 | --- | --- | --- |
@@ -19,22 +47,6 @@
 | **Decision owner** | Human reviewer |
 | **Validated implementations** | Make and n8n |
 | **Not included** | Lead scoring, external enrichment, automatic Sales handoff, notifications |
-
-## Business Problem
-
-Small B2B SaaS teams often receive inbound enquiries through simple forms, but the first review can be inconsistent and manual. The challenge is to interpret a prospect's free-text message without turning a lightweight intake process into a complex scoring or enrichment system.
-
-## Solution
-
-Scenario 01 implements the same inbound-triage pattern in Make and n8n. Each workflow:
-
-1. Accepts a synthetic inbound lead.
-2. Uses an LLM to interpret the free-text Message and propose a recommendation with a concise reason.
-3. Applies deterministic validation against three approved business outcomes.
-4. Creates an operational review item in Airtable.
-5. Leaves the final decision with a human reviewer.
-
-The AI recommendation is advisory. The validated MVP stops before any consequential Marketing-to-Sales action.
 
 ## Architecture
 
